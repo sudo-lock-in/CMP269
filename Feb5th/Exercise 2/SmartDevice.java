@@ -7,7 +7,7 @@ public abstract class SmartDevice implements Powerable{
         isOn = false;
     }
 
-    private static int activeDevices = 0;
+    static int activeDevicesCount = 0;
     abstract void performSelfDiagnostic();
 
 
