@@ -24,7 +24,7 @@ public class CreditCard extends PaymentMethod {
 
     @Override
     void validateAccount() {
-        totalTransactions += 1;
+        addTotalTransactions();
     }
 
 }

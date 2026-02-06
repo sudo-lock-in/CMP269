@@ -12,6 +12,10 @@ public abstract class PaymentMethod implements Payable {
 
    public static int getTotalTransactions() {
        return totalTransactions;
-   } //i had to create a getter
+   } //i had to make private & create a getter & setter (add function)
+
+   public static void addTotalTransactions() {
+       PaymentMethod.totalTransactions += 1;
+   }
    
 }

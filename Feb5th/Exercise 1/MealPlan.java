@@ -16,15 +16,15 @@ public class MealPlan extends PaymentMethod {
     public void processPayment(double amount) {
         if (balance - amount > 0) {
         balance -= amount;
-        totalTransactions += 1;
-        System.out.println(getPaymentStatus()); //inheritance requires me to implement this method somehow
+        addTotalTransactions();
         } else {
+            System.out.println(getPaymentStatus()); //inheritance requires me to implement this method somehow
             validateAccount();
         }
     }
 
     @Override
     public String getPaymentStatus() {
-        return "Successful";
+        return "Failed";
     }
 }
