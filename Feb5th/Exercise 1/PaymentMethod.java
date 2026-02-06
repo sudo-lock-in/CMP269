@@ -7,7 +7,11 @@ public abstract class PaymentMethod implements Payable {
         this.accountHolder = accountHolder;
     }
 
-    static int totalTransactions = 0;
+    private static int totalTransactions = 0;
     abstract void validateAccount();
+
+   public static int getTotalTransactions() {
+       return totalTransactions;
+   } //i had to create a getter
    
 }

@@ -17,7 +17,7 @@ public class MealPlan extends PaymentMethod {
         if (balance - amount > 0) {
         balance -= amount;
         totalTransactions += 1;
-        System.out.println(getPaymentStatus()); //inheritance requires me to implement this method somehow.
+        System.out.println(getPaymentStatus()); //inheritance requires me to implement this method somehow
         } else {
             validateAccount();
         }
