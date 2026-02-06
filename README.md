@@ -1,1 +1,1 @@
-I use Emacs. For object oriented programming I have to create separate classes for each java file. If your IDE works without needing .class specified for each .java do not worry about it.
+I use Emacs. This means that for object oriented programming in Java, I have to create separate classes for each file. If your IDE works without needing .class specified for each .java, do not worry about it.
