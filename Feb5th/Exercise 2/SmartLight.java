@@ -14,7 +14,7 @@ public class SmartLight extends SmartDevice implements Adjustable{
     public void turnOff() {
         if (isOn) {
             isOn = false;
-            activeDevicesCount--;
+            removeActiveDevice();
         }
     }   
 
@@ -22,7 +22,7 @@ public class SmartLight extends SmartDevice implements Adjustable{
     public void turnOn() {
         if (!isOn) {
             isOn = true;
-            activeDevicesCount++;
+            addActiveDevice();
         }
     }
 

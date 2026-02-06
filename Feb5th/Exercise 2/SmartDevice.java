@@ -11,4 +11,18 @@ public abstract class SmartDevice implements Powerable{
     abstract void performSelfDiagnostic();
 
 
+    //getters & setters needed
+    public static int getActiveDevicesCount() {
+        return activeDevicesCount;
+    }
+
+    public void addActiveDevice(){
+        activeDevicesCount++;
+    }
+    public void removeActiveDevice(){
+        activeDevicesCount--;
+    }
+
+
+
 }

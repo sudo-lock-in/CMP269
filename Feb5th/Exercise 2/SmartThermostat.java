@@ -24,12 +24,13 @@ public class SmartThermostat extends SmartDevice implements Adjustable {
         System.out.println("Checking temperature sensor...");
     }
 
-    //abstract methods cannot be called with super. i would have to extend from smartlight
+    //i cannot call super.turnOn() or super.turnOff() because those methods are not implemented in the parent class, 
+    // they are abstract. i have to implement them in this class.
     @Override
     public void turnOff() {
         if (isOn) {
             isOn = false;
-            activeDevicesCount--;
+            removeActiveDevice();
         }
     }   
 
@@ -38,7 +39,7 @@ public class SmartThermostat extends SmartDevice implements Adjustable {
         System.out.println("HVAC System Starting...");
         if (!isOn) {
             isOn = true;
-            activeDevicesCount++;
+            addActiveDevice();
         }
     }
 
