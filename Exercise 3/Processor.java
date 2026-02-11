@@ -3,14 +3,10 @@ import java.util.*;
 
 public class Processor {
     public static void main(String[] args) {
-        FileInputStream fileIS;
-        Scanner fileScan;
         String lineContent;
         PrintWriter output;
         Scanner inStream;
          try {
-                fileIS = new FileInputStream("students.txt");
-                fileScan = new Scanner(fileIS);
                 inStream = new Scanner(new File("students.txt"));
                 output = new PrintWriter(new FileOutputStream("grades_report.txt", true));
                 while (inStream.hasNextLine()) {
