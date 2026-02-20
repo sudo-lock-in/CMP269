@@ -28,8 +28,10 @@ public class RegistrationApp extends Application {
         grid.add(courseField, 3, 0);
         grid.add(status, 4, 0);
         grid.add(register, 5, 0);
+        String name = nameField.getText();
+        String course = courseField.getText();
+        register.setOnAction(e -> status.setText("Registration Successful for " + name + " in " + course + " !"));
         
-
         Scene scene = new Scene(grid, 400, 250);
         primaryStage.setTitle("Lehman Course Registration");
         primaryStage.setScene(scene);
