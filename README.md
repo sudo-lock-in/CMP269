@@ -1,7 +1,7 @@
 <ul>
-  <li>I sometimes have to create separate class files for each java file due to my IDE. If your IDE works without needing .class specified for each .java, please do not worry about it. 
+  <li>Sometimes my IDE creates additional files other than the ".java" one(s). 
 </li>
 <li>
-  Main methods are found in the "Driver" file.
+  My main methods are typically found in the "Driver.java" file.
 </li>
 </ul>
