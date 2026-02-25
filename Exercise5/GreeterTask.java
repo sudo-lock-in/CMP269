@@ -1,3 +1,4 @@
+//Exercise 1
 public class GreeterTask implements Runnable {
 
     @Override
@@ -17,6 +18,5 @@ public class GreeterTask implements Runnable {
         Thread LehmanThread2 = new Thread(task, "Lehman-Thread-2");
         LehmanThread1.start();
         LehmanThread2.start();
-
     }
 }
