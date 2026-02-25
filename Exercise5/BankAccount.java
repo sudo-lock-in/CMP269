@@ -1,3 +1,4 @@
+//Exercise 3
 public class BankAccount implements Runnable {
     private static int balance = 1000;
     public synchronized void withdraw(int amount) {
