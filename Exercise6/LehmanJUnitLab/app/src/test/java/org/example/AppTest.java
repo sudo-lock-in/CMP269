@@ -13,5 +13,10 @@ class AppTest {
     void testPassingGrade() {
         LehmanGradeBook gb = new LehmanGradeBook();
         assertTrue(gb.isPassing(70), "A grade of 70 should pass.");
+        assertEquals('A', gb.getLetterGrade(95));
+        assertEquals('F', gb.getLetterGrade(50));
+        assertEquals('A', gb.getLetterGrade(90));
+        assertEquals('B', gb.getLetterGrade(80));
+        assertEquals('C', gb.getLetterGrade(70));
     }
 }
