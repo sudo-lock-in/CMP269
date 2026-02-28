@@ -5,6 +5,9 @@ public class LehmanGradeBook {
         return grade >= 70;
     }
     char getLetterGrade(int score) {
+        if (score > 100 || score < 0) {
+            throw new IllegalArgumentException("Must be a valid score.");
+        }
         if (score >= 90) {
             return 'A';
         } else if (score >= 80 ){
