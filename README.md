@@ -1,7 +1,7 @@
 <ul>
-  <li>Sometimes my IDE creates additional files other than the ".java" one(s). 
+  <li>Sometimes my IDE creates additional files that can be ignored. 
 </li>
 <li>
-  My main methods are typically found in the "Driver.java" file.
+  Sometimes my main methods are found in a "Driver.java" file.
 </li>
 </ul>
