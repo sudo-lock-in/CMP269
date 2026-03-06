@@ -1,4 +1,4 @@
-Link to project 1 <a href="https://github.com/sudo-lock-in/Multi-Platform-Chat>here</a>
+Link to Project 1 <a href="https://github.com/sudo-lock-in/Multi-Platform-Chat>here</a>
 <ul>
   <li>
 Sometimes my IDE creates additional files other than the ".java" one(s).
