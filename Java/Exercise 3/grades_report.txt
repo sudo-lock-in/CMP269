@@ -1,0 +1,4 @@
+Student: Alice Smith | Average: 84
+Student: Peter Griffin | Average: 90
+Student: Darth Vader | Average: 66
+Student: Lee Sparta | Average: 20

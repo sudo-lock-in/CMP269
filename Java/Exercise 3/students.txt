@@ -1,0 +1,5 @@
+Alice_Smith 85 90 78
+Jeon_Jungkook 07 Error 97
+Peter_Griffin 100 90 80
+Darth_Vader 66 55 77
+Lee_Sparta 10 20 30
