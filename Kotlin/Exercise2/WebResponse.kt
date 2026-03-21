@@ -8,3 +8,10 @@ fun main() {
     println(notFound)
     println(success)
 }
+
+fun describeStatus(code: Int): String {
+    when (code) {
+        in 200..299 -> "Success: The request was fulfilled."
+
+    }
+}
