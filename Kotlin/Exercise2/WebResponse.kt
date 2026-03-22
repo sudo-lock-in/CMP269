@@ -3,19 +3,19 @@ package Exercise2
 data class WebResponse(val statusCode: Int, val statusMessage: String, val body: String?)
 
 fun main() {
-    //exercise 1
+    //exercise 1 test
     val success = WebResponse(200, "success", null)
     val notFound = WebResponse(404, "not-found", null)
     println(notFound)
     println(success)
     println()
 
-    //exercise 2
+    //exercise 2 test
     println(describeStatus(success.statusCode))
     println(describeStatus(notFound.statusCode))
     println()
 
-    //exercise 3
+    //exercise 3 test
     println(routeRequest("/home", "Alice"))
     println(routeRequest("/grades", "Bob"))
     println(routeRequest("/unknown", null))
