@@ -5,11 +5,19 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.http.*
 import io.ktor.server.http.content.*
-import io.ktor.server.routing.*
+import kotlinx.serialization.Serializable
+import io.ktor.serialization.kotlinx.json.*
+import io.ktor.server.plugins.contentnegotiation.*
 
 val grades = mapOf("123" to 95, "456" to 82)
 
+@Serializable
+data class Stock(val symbol: String, val price: Double)
+
 fun Application.module() {
+    install(ContentNegotiation) {
+        json()
+    }
     routing {
         get("/") {
             call.respondText("Server is online at Lehman College.")
@@ -24,6 +32,11 @@ fun Application.module() {
             call.respondText("Student $studentId earned a grade of $grade.")
             }
         staticResources("/static", "static")
+        get("/api/stock/{symbol}") {
+            val symbol = call.parameters["symbol"] ?: "Null"
+            val stockObject = Stock(symbol, 150.25)
+            call.respond(stockObject)
+            }
         }
     }
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
