@@ -4,6 +4,8 @@ import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.http.*
+import io.ktor.server.http.content.*
+import io.ktor.server.routing.*
 
 val grades = mapOf("123" to 95, "456" to 82)
 
@@ -21,6 +23,7 @@ fun Application.module() {
             val grade = grades[studentId] ?: return@get call.respondText("Student not found.", status = HttpStatusCode.NotFound)
             call.respondText("Student $studentId earned a grade of $grade.")
             }
+        staticResources("/static", "static")
         }
     }
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
