@@ -22,7 +22,7 @@ fun saveQRCode(content: String, fileName: String) {
     MatrixToImageWriter.writeToPath(bitMatrix, "PNG", Path.of(fileName))
 }
 // part 2
-fun saveQRCodeStream(content: String, outputStream: OutputStream) {
+fun saveQRCodeStream(content: String, output: ByteArrayOutputStream) {
     val bitMatrix = QRCodeWriter().encode(content, BarcodeFormat.QR_CODE, 300, 300)
-    MatrixToImageWriter.writeToStream(bitMatrix, "PNG", outputStream)
+    MatrixToImageWriter.writeToStream(bitMatrix, "PNG", output)
 }
