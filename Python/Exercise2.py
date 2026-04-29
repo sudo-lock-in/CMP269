@@ -9,17 +9,28 @@ class Payable:
 
 
 class PaymentMethod(Payable):
-    def __init__(self, __accountHolder: str, __balance: float):
-        self.__accountHolder = __accountHolder
-        self.__balance = __balance
+    def __init__(self, accountHolder: str, balance: float):
+        self._accountHolder = accountHolder
+        self._balance = balance
     totalTransactions = 0
     def validateAccount():
         pass
 
 
 class CreditCard(PaymentMethod):
-    def __init__(self, __accountHolder: str, __balance: float, __creditLimit: float):
-        self.__creditLimit = __creditLimit
+    def __init__(self, accountHolder: str, balance: float, creditLimit: float):
+        super().__init__(_accountHolder, _balance)
+        self.__creditLimit = creditLimit
+    @Override
+    def processPayment(self, amount: float):
+        if amount > _balance + __creditLimit:
+            print("Transaction Declined.")
+        else:
+            _balance -= amount
+            totalTransactions += 1
+            print("Transaction Accepted.")
+
+
 
 # TODO below is incomplete
 
