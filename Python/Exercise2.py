@@ -1,36 +1,28 @@
 # The Scenario: "Lehman Campus Payment System"
 # The college needs a new system to handle different types of payments (Credit Cards, Meal # # Plans, and Financial Aid). You are tasked with building the class hierarchy for this system.
-class Exercise1_Student:
-    """
-    Goal: Practice class definition, __init__, and the self keyword.
-    """
-    def __init__(self, name, gpa):
-        self.name = name
-        self.gpa = gpa
-        # Using a single underscore denotes a "protected" or internal variable
-        self._is_active = True
+# This exercise is already completed. Use it as a reference to recreate Java Exercise 1
+class Payable:
+    def processPayment(self, amount: float):
+        pass
+    def getPaymentStatus(self) -> str:
+        pass
 
-    def get_status(self):
-        status = "Active" if self._is_active else "Inactive"
-        return f"{self.name} is currently {status} with a {self.gpa} GPA."
 
-class Exercise2_GradStudent(Exercise1_Student):
-    """
-    Goal: Practice Inheritance and super().
-    """
-    def __init__(self, name, gpa, research_lab):
-        # Call the parent class constructor
-        super().__init__(name, gpa)
-        self.research_lab = research_lab
+class PaymentMethod(Payable):
+    def __init__(self, __accountHolder: str, __balance: float):
+        self.__accountHolder = __accountHolder
+        self.__balance = __balance
+    totalTransactions = 0
+    def validateAccount():
+        pass
 
-    # Overriding the parent method
-    def get_status(self):
-        base_status = super().get_status()
-        return f"{base_status} They research in the {self.research_lab} lab."
 
-class Robot:
-    def get_status(self):
-        return "BEEP BOOP. Robot systems nominal."
+class CreditCard(PaymentMethod):
+    def __init__(self, __accountHolder: str, __balance: float, __creditLimit: float):
+        self.__creditLimit = __creditLimit
+
+# TODO below is incomplete
+
 
 def exercise_3_polymorphism():
     """
