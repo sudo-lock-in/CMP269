@@ -15,21 +15,21 @@ class PaymentMethod(Payable):
         self._accountHolder = accountHolder
         self._balance = balance
     totalTransactions = 0
-    def validateAccount():
+    def validateAccount(self):
         pass
 
 
 class CreditCard(PaymentMethod):
     def __init__(self, accountHolder: str, balance: float, creditLimit: float):
         super().__init__(accountHolder, balance)
-        self.__creditLimit = creditLimit
+        self._creditLimit = creditLimit
     @override
     def processPayment(self, amount: float):
-        if amount > _balance + __creditLimit:
+        if amount > self._balance + self._creditLimit:
             print("Transaction Declined.")
         else:
-            _balance -= amount
-            totalTransactions += 1
+            self._balance -= amount
+            PaymentMethod.totalTransactions += 1
             print("Transaction Accepted.")
 
 class MealPlan(PaymentMethod):
@@ -37,18 +37,18 @@ class MealPlan(PaymentMethod):
         self._accountHolder = accountHolder
         self._balance = balance
     @override
-    def validateAccount():
-        if _balance >= 0:
+    def validateAccount(self):
+        if self._balance >= 0:
             print("Valid")
         else:
             print("Invalid")
     @override
     def processPayment(self, amount: float):
-        if amount > _balance:
+        if amount > self._balance:
             print("Transaction Declined.")
         else:
-            _balance -= amount
-            totalTransactions += 1
+            self._balance -= amount
+            PaymentMethod.totalTransactions += 1
             print("Transaction Accepted.")
 
 
@@ -60,4 +60,4 @@ if __name__ == "__main__":
     paymentQueue.append(card)
     for c in paymentQueue:
         c.processPayment(50)
-    print(totalTransactions)
+    print(f"Total Transactions: {PaymentMethod.totalTransactions}")
