@@ -24,7 +24,21 @@ def task_1_append_logger():
     print("--- Task 1: Append Logger ---")
     note = input("Enter a note for the log: ")
     # TODO: Implement append logic
-    pass
+    try:
+        with open('session_log.txt', 'a') as file:
+            file.write(note)
+    except FileNotFoundError:
+        print("File not found.")
+    except PermissionError:
+        print("Permission denied: Unable to append to file.")
+    try:
+        with open('session_log.txt', 'r') as file:
+            print(file.read())
+    except FileNotFoundError:
+        print("File not found.")
+    except PermissionError:
+        print("Permission denied: Unable to read file.")
+
 
 
 def task_2_word_count_utility():
@@ -90,9 +104,8 @@ def task_5_integration_report():
 
 if __name__ == "__main__":
     # You can uncomment these as you complete them to test your code
-    # task_1_append_logger()
+    task_1_append_logger()
     # task_2_word_count_utility()
     # task_3_api_status_checker()
     # task_4_data_filtering()
     # task_5_integration_report()
-    pass
