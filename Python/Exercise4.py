@@ -66,7 +66,8 @@ def task_3_data_manipulation():
         "Enrolled":[25,30,20]
     }
     df = pd.DataFrame(courses)
-    print(df)
+    filtered_df = df[df['Enrolled'] > 20]
+    print(filtered_df['Enrolled'].sum()) # expected 55
 
 
 
@@ -80,12 +81,19 @@ def task_4_csv_integration():
     """
     print("\n--- Task 4: Easy CSV I/O ---")
     # TODO: Implement DataFrame to CSV saving and reading
-    pass
+    data = {
+        'Symbol': ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA'],
+        'Price': [175.20, 420.55, 150.10, 178.45, 165.30]
+    }
+    df = pd.DataFrame(data)
+    df.to_csv('stocks.csv', index=False)
+    df_loaded = pd.read_csv('stocks.csv')
+    print(df_loaded)
 
 
 if __name__ == "__main__":
     # Uncomment these as you work through the assignment
     task_1_series_creation()
     task_2_dataframe_creation()
-    # task_3_data_manipulation()
-    # task_4_csv_integration()
+    task_3_data_manipulation()
+    task_4_csv_integration()
