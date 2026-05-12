@@ -42,7 +42,13 @@ def task_2_dataframe_creation():
     """
     print("\n--- Task 2: Course DataFrame ---")
     # TODO: Implement DataFrame creation
-    pass
+    courses = {
+        "CourseCode": ["CMP168","CMP269","CMP338"],
+        "Credits": [4,4,4],
+        "Enrolled":[25,30,20]
+    }
+    df = pd.DataFrame(courses)
+    print(df)
 
 
 def task_3_data_manipulation():
@@ -54,7 +60,14 @@ def task_3_data_manipulation():
     """
     print("\n--- Task 3: Filtering and Math ---")
     # TODO: Implement filtering and sum
-    pass
+    courses = {
+        "CourseCode": ["CMP168","CMP269","CMP338"],
+        "Credits": [4,4,4],
+        "Enrolled":[25,30,20]
+    }
+    df = pd.DataFrame(courses)
+    print(df)
+
 
 
 def task_4_csv_integration():
@@ -73,6 +86,6 @@ def task_4_csv_integration():
 if __name__ == "__main__":
     # Uncomment these as you work through the assignment
     task_1_series_creation()
-    # task_2_dataframe_creation()
+    task_2_dataframe_creation()
     # task_3_data_manipulation()
     # task_4_csv_integration()
