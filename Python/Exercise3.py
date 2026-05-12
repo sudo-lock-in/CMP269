@@ -79,14 +79,14 @@ def task_3_api_status_checker():
     """
     print("\n--- Task 3: API Status Checker ---")
     # TODO: Implement API request with status code logic
-    response = requests.get('https://jsonplaceholder.typicode.com/posts/101')
-
-    # we get a response object from the API request
-    if response.status_code == 200:
-       print(response.json())
-    else:
-        print(f"API Request Failed with status code: {response.status_code}")
-        return None
+    try:
+        response = requests.get('https://jsonplaceholder.typicode.com/posts/101', timeout=5)
+        if response.status_code == 200:
+            print(response.json())
+        else:
+            print("Error: Post not found.")
+    except requests.exceptions.Timeout:
+        print("Error: The request timed out.")
 
 
 def task_4_data_filtering():
