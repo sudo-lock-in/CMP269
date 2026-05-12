@@ -100,7 +100,16 @@ def task_4_data_filtering():
     """
     print("\n--- Task 4: Data Filtering ---")
     # TODO: Fetch users and filter by address suite
-    pass
+    response = requests.get('https://jsonplaceholder.typicode.com/users')
+    if response.status_code == 200:
+        data = response.json()
+        for person in data:
+            address = person.get('address')
+            suites = address.get('suite')
+            if "Suite" in suites:
+                print(person['name'])
+    else:
+        print(f"Failed to fetch data. Status code: {response.status_code}")
 
 
 def task_5_integration_report():
@@ -124,5 +133,5 @@ if __name__ == "__main__":
     task_1_append_logger()
     task_2_word_count_utility()
     task_3_api_status_checker()
-    # task_4_data_filtering()
+    task_4_data_filtering()
     # task_5_integration_report()
