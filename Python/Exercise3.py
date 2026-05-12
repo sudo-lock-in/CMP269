@@ -125,7 +125,20 @@ def task_5_integration_report():
     """
     print("\n--- Task 5: Integration Report ---")
     # TODO: Combine API fetch and File Write
-    pass
+    response = requests.get('https://jsonplaceholder.typicode.com/posts/1')
+    if response.status_code == 200:
+        data = response.json()
+        info = f"Title:\n{data['title']}\n\nBody:\n{data['body']}"
+    else:
+        print(f"Failed to fetch data. Status code: {response.status_code}")
+    try:
+        with open('api_report.txt', 'w') as file:
+            file.write(info)
+    except FileNotFoundError:
+        print("File not found.")
+    print("Report generated")
+
+
 
 
 if __name__ == "__main__":
@@ -134,4 +147,4 @@ if __name__ == "__main__":
     task_2_word_count_utility()
     task_3_api_status_checker()
     task_4_data_filtering()
-    # task_5_integration_report()
+    task_5_integration_report()
