@@ -26,7 +26,7 @@ def task_1_append_logger():
     # TODO: Implement append logic
     try:
         with open('session_log.txt', 'a') as file:
-            file.write(note)
+            file.write(note + "\n")
     except FileNotFoundError:
         print("File not found.")
     except PermissionError:
@@ -53,7 +53,17 @@ def task_2_word_count_utility():
     """
     print("\n--- Task 2: Word Count Utility ---")
     # TODO: Implement file reading and word counting
-    pass
+    try:
+        with open('lehman_motto.txt', 'r') as file:
+            words = file.read()
+            arr = words.split()
+            print(len(arr)) # expected 9
+    except FileNotFoundError:
+        print("File not found.")
+    except PermissionError:
+        print("Permission denied: Unable to read file.")
+
+
 
 
 def task_3_api_status_checker():
@@ -105,7 +115,7 @@ def task_5_integration_report():
 if __name__ == "__main__":
     # You can uncomment these as you complete them to test your code
     task_1_append_logger()
-    # task_2_word_count_utility()
+    task_2_word_count_utility()
     # task_3_api_status_checker()
     # task_4_data_filtering()
     # task_5_integration_report()
