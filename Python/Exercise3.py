@@ -79,7 +79,14 @@ def task_3_api_status_checker():
     """
     print("\n--- Task 3: API Status Checker ---")
     # TODO: Implement API request with status code logic
-    pass
+    response = requests.get('https://jsonplaceholder.typicode.com/posts/101')
+
+    # we get a response object from the API request
+    if response.status_code == 200:
+       print(response.json())
+    else:
+        print(f"API Request Failed with status code: {response.status_code}")
+        return None
 
 
 def task_4_data_filtering():
@@ -116,6 +123,6 @@ if __name__ == "__main__":
     # You can uncomment these as you complete them to test your code
     task_1_append_logger()
     task_2_word_count_utility()
-    # task_3_api_status_checker()
+    task_3_api_status_checker()
     # task_4_data_filtering()
     # task_5_integration_report()
