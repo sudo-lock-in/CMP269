@@ -25,7 +25,7 @@ def task_1_series_creation():
         "Music": 3,
         "Library": 4
     }
-    building_series = pd.series(buildings)
+    building_series = pd.Series(buildings)
     print(building_series)
 
 
