@@ -86,7 +86,9 @@ def task_4_algorithmic_metrics(clean_df):
     # TODO: Add Daily_Return column
     # TODO: Add 2_Day_MA column
     # TODO: Print final DataFrame
-    pass
+    clean_df['Daily Return'] = clean_df['Close'].pct_change()
+    clean_df['2_Day_MA'] = clean_df['Close'].rolling(window=2).mean()
+    print(clean_df)
 
 
 if __name__ == "__main__":
@@ -97,4 +99,4 @@ if __name__ == "__main__":
     if clean_df is not None:
         task_2_volatility_filtering(clean_df.copy())
         task_3_financial_summary(clean_df.copy())
-    #     task_4_algorithmic_metrics(clean_df.copy())
+        task_4_algorithmic_metrics(clean_df.copy())
