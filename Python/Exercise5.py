@@ -37,8 +37,8 @@ def task_1_data_cleaning():
     # TODO: Drop remaining NaNs
     # TODO: Print and return the cleaned df
     print(df.isna().sum())
-    clean_df = df['Volume'].fillna(0)
-    clean_df = clean_df.dropna()
+    df['Volume'] = df['Volume'].fillna(0)
+    clean_df = df.dropna()
     print(clean_df)
     return clean_df
 
@@ -55,7 +55,9 @@ def task_2_volatility_filtering(clean_df):
     print("\n--- Task 2: Volatility Filtering ---")
     # TODO: Calculate Price_Swing
     # TODO: Apply the multi-condition filter
-    pass
+    clean_df['Price_Swing'] = clean_df['Close'] - clean_df['Open']
+    filtered = clean_df[(clean_df['Price_Swing'] > 2.00) | (clean_df['Price_Swing'] < -2.00)]
+    print(filtered)
 
 
 def task_3_financial_summary(clean_df):
@@ -91,7 +93,7 @@ if __name__ == "__main__":
 
     clean_df = task_1_data_cleaning()
 
-    # if clean_df is not None:
-    #     task_2_volatility_filtering(clean_df.copy())
+    if clean_df is not None:
+        task_2_volatility_filtering(clean_df.copy())
     #     task_3_financial_summary(clean_df.copy())
     #     task_4_algorithmic_metrics(clean_df.copy())
