@@ -70,7 +70,8 @@ def task_3_financial_summary(clean_df):
     print("\n--- Task 3: Financial Summary ---")
     # TODO: Print describe() for Close
     # TODO: Print max Volume
-    pass
+    print(clean_df['Close'].describe())
+    print(clean_df['Volume'].max())
 
 
 def task_4_algorithmic_metrics(clean_df):
@@ -95,5 +96,5 @@ if __name__ == "__main__":
 
     if clean_df is not None:
         task_2_volatility_filtering(clean_df.copy())
-    #     task_3_financial_summary(clean_df.copy())
+        task_3_financial_summary(clean_df.copy())
     #     task_4_algorithmic_metrics(clean_df.copy())
