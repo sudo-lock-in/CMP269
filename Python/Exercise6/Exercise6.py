@@ -32,9 +32,13 @@ def task_1_trend_line():
     4. Call plt.show() to render it.
     """
     print("--- Task 1: Building a Trend Line ---")
-    df = get_crypto_data()
     # TODO: Implement Matplotlib charting
-    pass
+    df = get_crypto_data()
+    plt.plot(df['Day'], df['Bitcoin'])
+    plt.title('Bitcoin Prices Over 7 Days')
+    plt.xlabel('Days')
+    plt.ylabel('Bitcoin Prices')
+    plt.show()
 
 def task_2_seaborn_comparison():
     """
@@ -50,6 +54,6 @@ def task_2_seaborn_comparison():
 
 if __name__ == "__main__":
     # Uncomment to test visuals during development
-    # task_1_trend_line()
+    task_1_trend_line()
     # task_2_seaborn_comparison()
     pass
