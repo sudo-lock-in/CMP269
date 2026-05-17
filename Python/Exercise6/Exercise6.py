@@ -50,10 +50,17 @@ def task_2_seaborn_comparison():
     """
     print("--- Task 2: Seaborn Comparison ---")
     # TODO: Implement Seaborn bar chart
-    pass
+    df = pd.DataFrame({
+        'Portfolios': ['Portfolio A', 'Portfolio B', 'Portfolio C'],
+        'Total Values': [10000, 15000, 8000]
+    })
+    sns.barplot(x='Portfolios',
+                y='Total Values',
+                data=df)
+    plt.show()
+
 
 if __name__ == "__main__":
     # Uncomment to test visuals during development
     task_1_trend_line()
-    # task_2_seaborn_comparison()
-    pass
+    task_2_seaborn_comparison()
