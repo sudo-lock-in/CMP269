@@ -59,7 +59,6 @@ def task_2_seaborn_comparison():
                 data=df)
     plt.show()
 
-
 if __name__ == "__main__":
     # Uncomment to test visuals during development
     task_1_trend_line()
